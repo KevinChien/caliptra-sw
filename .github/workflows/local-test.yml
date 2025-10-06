@@ -1,0 +1,18 @@
+name: Local Runner Test
+
+on:
+  push:
+    branches: ["my-feature"]
+
+jobs:
+  test_local_runner:
+    runs-on: self-hosted   # ⚡ 確保用本地 runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Show commit info
+        run: |
+          echo "Branch: $GITHUB_REF"
+          echo "Commit: $(git rev-parse HEAD)"
+          echo "Local runner is working!"
