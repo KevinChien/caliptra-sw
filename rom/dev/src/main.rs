@@ -53,7 +53,7 @@ mod wdt;
 use caliptra_drivers::printer as print;
 
 #[cfg(feature = "std")]
-pub fn main() {}
+pub fn main() { }
 
 const BANNER: &str = r#"
 Running Caliptra ROM ...
